@@ -1,35 +1,22 @@
-package nik.trade.tradeapp2.model;
+package nik.trade.tradeapp2.forms;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-@Document
-public class Customer {
-    @Id
+public class CustomerForm {
     private String id;
     private String name;
     private String addres;
     private int phone;
     private String  contactPerson;
 
-    public Customer() {
+    public CustomerForm() {
     }
 
-    public Customer(String id, String name, String addres, int phone, String contactPerson) {
+    public CustomerForm(String id, String name, String addres, int phone, String contactPerson) {
         this.id = id;
         this.name = name;
         this.addres = addres;
         this.phone = phone;
         this.contactPerson = contactPerson;
     }
-
-    public Customer(String name, String addres, int phone, String contactPerson) {
-        this.name = name;
-        this.addres = addres;
-        this.phone = phone;
-        this.contactPerson = contactPerson;
-    }
-
 
     public String getId() {
         return id;
@@ -69,5 +56,16 @@ public class Customer {
 
     public void setContactPerson(String contactPerson) {
         this.contactPerson = contactPerson;
+    }
+
+    @Override
+    public String toString() {
+        return "CustomerForm{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", addres='" + addres + '\'' +
+                ", phone=" + phone +
+                ", contactPerson='" + contactPerson + '\'' +
+                '}';
     }
 }

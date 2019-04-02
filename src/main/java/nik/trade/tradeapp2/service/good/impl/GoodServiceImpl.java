@@ -17,18 +17,19 @@ public class GoodServiceImpl implements IGoodService {
     @Autowired
     GoodServiceImpl goodService;
 
-
     @Autowired
     GoodRepisitory repisitory;
-
-
 
     @Override
     public Good create(Good good) {
         return this.repisitory.save(good);
     }
 
-    @Override
+
+    public List<Good> createAll(List<Good> goods) {
+        return repisitory.saveAll(goods);  }
+
+        @Override
     public Good get(String id) {
 
         return this.repisitory.findById(id).orElse(null);

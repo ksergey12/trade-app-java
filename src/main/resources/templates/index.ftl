@@ -14,7 +14,7 @@
 <h2>${message}</h2>
 
 
-<a href="<@spring.url '/student/list'/>">Student List</a>
+<a href="<@spring.url '/good/list'/>">Good List</a>
 
 </body>
 </html>

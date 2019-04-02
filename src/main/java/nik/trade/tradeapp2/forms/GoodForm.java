@@ -1,14 +1,23 @@
 package nik.trade.tradeapp2.forms;
 
+import nik.trade.tradeapp2.model.Delivery;
+
 public class GoodForm {
 
 
     private String id;
     private String name;
     private int price;
-    private String Delivery;
-    private String Description;
+    private String delivery;
+    private String description;
 
+    public String getDelivery() {
+        return delivery;
+    }
+
+    public void setDelivery(String delivery) {
+        this.delivery = delivery;
+    }
 
     public String getId() {
         return id;
@@ -34,32 +43,24 @@ public class GoodForm {
         this.price = price;
     }
 
-    public String getDelivery() {
-        return Delivery;
-    }
 
-    public void setDelivery(String delivery) {
-        Delivery = delivery;
-    }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public void setDescription(String description) {
-        Description = description;
+        description = description;
     }
-
-
 
     @Override
     public String toString() {
-        return "Good{" +
+        return "GoodForm{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", price=" + price +
-                ", Delivery='" + Delivery + '\'' +
-                ", Description='" + Description + '\'' +
+                ", delivery=" + delivery +
+                ", Description='" + description + '\'' +
                 '}';
     }
 }

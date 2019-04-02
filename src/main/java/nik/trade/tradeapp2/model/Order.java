@@ -1,23 +1,32 @@
 package nik.trade.tradeapp2.model;
 
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.Objects;
 
 public class Order {
-    public String id;
-    public int idCustomer;
-    public int idGood;
-    public int amount;
-    public Date date;
+    private String id;
+    private int amount;
+    private LocalDate date;
+    private Good good;
+    private Customer customer;
 
-    public Order() {
-    }
-
-    public Order(String id, int idCustomer, int idGood, int amount, Date date) {
-        this.id = id;
-        this.idCustomer = idCustomer;
-        this.idGood = idGood;
+    public Order(int amount, LocalDate date, Good good, Customer customer) {
         this.amount = amount;
         this.date = date;
+        this.good = good;
+        this.customer = customer;
+    }
+
+    public Order(String id, int amount, LocalDate date, Good good, Customer customer) {
+        this.id = id;
+        this.amount = amount;
+        this.date = date;
+        this.good = good;
+        this.customer = customer;
+    }
+
+    public Order() {
     }
 
     public String getId() {
@@ -28,22 +37,6 @@ public class Order {
         this.id = id;
     }
 
-    public int getIdCustomer() {
-        return idCustomer;
-    }
-
-    public void setIdCustomer(int idCustomer) {
-        this.idCustomer = idCustomer;
-    }
-
-    public int getIdGood() {
-        return idGood;
-    }
-
-    public void setIdGood(int idGood) {
-        this.idGood = idGood;
-    }
-
     public int getAmount() {
         return amount;
     }
@@ -52,11 +45,53 @@ public class Order {
         this.amount = amount;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
+
+    public Good getGood() {
+        return good;
+    }
+
+    public void setGood(Good good) {
+        this.good = good;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Order order = (Order) o;
+        return Objects.equals(id, order.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id='" + id + '\'' +
+                ", amount=" + amount +
+                ", date=" + date +
+                ", good=" + good +
+                ", customer=" + customer +
+                '}';
+    }
 }
+
+

@@ -11,25 +11,31 @@ public class Good {
     private String id;
     private String name;
     private int price;
-    private String Delivery;
-    private String Description;
+    private String delivery;
+    private String description;
 
-    public Good() {
-    }
-
-    public Good(String name, int price, String delivery, String description) {
+    public Good(String name, int price, String  delivery, String description) {
         this.name = name;
         this.price = price;
-        Delivery = delivery;
-        Description = description;
+        this.delivery = delivery;
+        this.description = description;
     }
 
-    public Good(String id, String name, int price, String delivery, String description) {
+    public Good(String name, int price, String description) {
+        this.name = name;
+        this.price = price;
+        this.description = description;
+    }
+
+    public Good(String id, String name, int price, String  delivery, String description) {
         this.id = id;
         this.name = name;
         this.price = price;
-        Delivery = delivery;
-        Description = description;
+        this.delivery = delivery;
+        this.description = description;
+    }
+
+    public Good() {
     }
 
     public String getId() {
@@ -56,20 +62,20 @@ public class Good {
         this.price = price;
     }
 
-    public String getDelivery() {
-        return Delivery;
+    public String  getDelivery() {
+        return delivery;
     }
 
-    public void setDelivery(String delivery) {
-        Delivery = delivery;
+    public void setDelivery(String  delivery) {
+        this.delivery = delivery;
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public void setDescription(String description) {
-        Description = description;
+        this.description = description;
     }
 
     @Override
@@ -91,8 +97,8 @@ public class Good {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", price=" + price +
-                ", Delivery='" + Delivery + '\'' +
-                ", Description='" + Description + '\'' +
+                ", delivery=" + delivery +
+                ", Description='" + description + '\'' +
                 '}';
     }
 }
