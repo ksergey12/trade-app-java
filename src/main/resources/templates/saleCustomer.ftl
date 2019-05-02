@@ -19,4 +19,5 @@
 <a href="<@spring.url '/customer/list'/>" class="list-group-item active">customer List</a>
 </body>
 
+
 </html>
