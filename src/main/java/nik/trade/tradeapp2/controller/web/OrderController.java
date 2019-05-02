@@ -53,7 +53,6 @@ public class OrderController {
         model.addAttribute("mavsCustomer", mavsCustomer);
         model.addAttribute("orderForm", orderForm);
 
-
         System.out.println(mavs);
         return "addOrder";
 
