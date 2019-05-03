@@ -1,6 +1,5 @@
 package nik.trade.tradeapp2.controller.web;
 
-import nik.trade.tradeapp2.forms.GoodForm;
 import nik.trade.tradeapp2.forms.OrderForm;
 import nik.trade.tradeapp2.model.Customer;
 import nik.trade.tradeapp2.model.Good;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.time.LocalDate;
-import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -63,10 +61,10 @@ public class OrderController {
                           @ModelAttribute("orderForm") OrderForm orderForm ){
 
         Customer customer= customerService.getAll().stream()
-                .filter(customer1 -> customer1.getName().equals(orderForm.getCustomer())).findFirst().orElse(null);
+                .filter(customer1 -> customer1.getId().equals(orderForm.getCustomer())).findFirst().orElse(null);
         System.out.println("orderForm.getCustomer()"+ orderForm.getCustomer());
         Good good= goodService.getAll().stream()
-                .filter(good1 -> good1.getName().equals(orderForm.getGood())).findFirst().orElse(null);
+                .filter(good1 -> good1.getId().equals(orderForm.getGood())).findFirst().orElse(null);
         System.out.println("orderForm.getGood()"+ orderForm.getGood());
         System.out.println(orderForm.toString());
         Order newOrder  = new Order( orderForm.getAmount(), LocalDate.parse(orderForm.getDate()), good,customer, orderForm.getCount());

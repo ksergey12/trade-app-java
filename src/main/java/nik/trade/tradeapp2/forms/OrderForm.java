@@ -1,12 +1,5 @@
 package nik.trade.tradeapp2.forms;
 
-import nik.trade.tradeapp2.model.Customer;
-import nik.trade.tradeapp2.model.Good;
-import nik.trade.tradeapp2.model.Order;
-
-import java.time.LocalDate;
-import java.util.Objects;
-
 public class OrderForm {
     private String id;
     private int amount;
@@ -24,7 +17,6 @@ public class OrderForm {
         this.summ = this.amount* this.count;
     }
 
-
     public int getCount() {
         return count;
     }
@@ -32,7 +24,6 @@ public class OrderForm {
     public void setCount(int count) {
         this.count = count;
     }
-
 
     public String getId() {
         return id;
@@ -62,15 +53,15 @@ public class OrderForm {
         return good;
     }
 
-    public void setGood(String goodId) {
-        this.good = good;
-    }
-
     public String getCustomer() {
         return customer;
     }
 
-    public void setCustomerID(String customerID) {
+    public void setGood(String good) {
+        this.good = good;
+    }
+
+    public void setCustomer(String customer) {
         this.customer = customer;
     }
 
