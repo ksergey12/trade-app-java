@@ -18,17 +18,14 @@
 
             amount:<@spring.formInput "orderForm.amount" "" "number"/>
             <br>
-            name:<@spring.formInput "orderForm.good" "" "text"/>
+            name:<@spring.formSingleSelect "orderForm.good" mavs ""/>
            <br>
-            customer:<@spring.formInput "orderForm.customer" "" "text"/>
+            customer:<@spring.formSingleSelect "orderForm.customer" mavsCustomer ""/>
             <br>
             date:<@spring.formInput "orderForm.date" "" "date"/>
             <br>
             count:<@spring.formInput "orderForm.count" "" "number"/>
             <br>
-
-
-       <#--  <@spring.formSingleSelect "customerForm.name", "mavsCustomer", ""/>-->
 
         <br>
 
